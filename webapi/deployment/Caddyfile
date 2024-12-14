@@ -1,0 +1,21 @@
+:8080 {
+	# handle_path / {
+	# 	root * ../../webui/dist
+	# 	file_server
+	# }
+
+	handle_path /api* {
+		reverse_proxy localhost:8081
+	}
+
+	# handle {
+	# 	respond "Not found" 404
+	# }
+
+	root ../../webui/dist
+	file_server
+}
+
+# :8080/api* {
+# 	reverse_proxy localhost:8081
+# }
